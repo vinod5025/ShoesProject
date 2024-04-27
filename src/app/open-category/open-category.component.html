@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="heading">{{cat_name}} Products</h1>
+        </div>
+        <div class="col-md-3 mb-3" *ngFor="let row of products">
+            <div class="card" routerLink="/product_details/{{row.product_tbl_id}}">
+                <div class="card-header">
+                    {{row.product_name}}
+                </div>
+                <div class="card-body">
+                    <img [src]="row.product_img" width="100px">
+                </div>
+                <div class="card-footer">
+                   ₹ {{row.price}} /-
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
